@@ -13,4 +13,10 @@ export class XkcdServiceService {
 
 }
 
+  getComicByValue(value) {
+    const url = 'http://xkcd.com/' + value + '/info.0.json';
+    return this.httpClient.get<XKCDComic>(url);
+
+  }
+
 }

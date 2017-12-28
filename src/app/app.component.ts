@@ -29,9 +29,26 @@ export class AppComponent {
 
   }
 
+  getComicByValue(value) {
+
+    this.xkcdService.getComicByValue(value).subscribe( (res: XKCDComic) => {
+      console.log(res);
+
+      this.xkcdComic = new XKCDComic(res['month'], res['num'], res['link'], res['year'], res['news'], res['safe_title'], res['transcript'],
+        res['alt'], res['img'], res['title'], res['day']);
+
+    });
+  }
 
   showComicStrip() {
     this.showComic = !this.showComic;
+
+  }
+
+  onEnter(value) {
+
+    this.getComicByValue(value);
+
   }
   }
 

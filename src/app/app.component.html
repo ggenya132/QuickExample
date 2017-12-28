@@ -14,6 +14,10 @@
     <img src="{{this.xkcdComic.img}}" alt="{{this.xkcdComic.alt}}" style="padding-bottom: 2em">
   </div>
 
+
+</div>
+<h1>Search for specific XKCD's with this input! Hit Enter to search</h1>
+<div class="col-md-4">  <input #box (keyup.enter)="onEnter(box.value)" class="form-control">
 </div>
 
 
